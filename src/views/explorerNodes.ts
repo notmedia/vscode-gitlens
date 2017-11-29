@@ -6,6 +6,8 @@ export * from './branchesNode';
 export * from './branchHistoryNode';
 export * from './commitFileNode';
 export * from './commitNode';
+export * from './commitsNode';
+export * from './commitsResultsNode';
 export * from './fileHistoryNode';
 export * from './historyNode';
 export * from './remoteNode';

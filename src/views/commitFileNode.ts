@@ -1,8 +1,7 @@
 'use strict';
 import { Command, TreeItem, TreeItemCollapsibleState } from 'vscode';
 import { Commands, DiffWithPreviousCommandArgs } from '../commands';
-import { ExplorerNode, ResourceType } from './explorerNode';
-import { GitExplorer } from './gitExplorer';
+import { Explorer, ExplorerNode, ResourceType } from './explorerNode';
 import { CommitFormatter, getGitStatusIcon, GitBranch, GitLogCommit, GitUri, ICommitFormatOptions, IGitStatusFile, IStatusFormatOptions, StatusFileFormatter } from '../gitService';
 import * as path from 'path';
 
@@ -24,7 +23,7 @@ export class CommitFileNode extends ExplorerNode {
     constructor(
         public readonly status: IGitStatusFile,
         public commit: GitLogCommit,
-        protected readonly explorer: GitExplorer,
+        protected readonly explorer: Explorer,
         private displayAs: CommitFileNodeDisplayAs = CommitFileNodeDisplayAs.Commit,
         public readonly branch?: GitBranch
     ) {
